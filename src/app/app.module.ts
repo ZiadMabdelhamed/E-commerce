@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CartCounterComponent } from './header/cart-counter/cart-counter.component';
 import { WishlistCounterComponent } from './header/wishlist-counter/wishlist-counter.component';
+import { NavigationLinksComponent } from './header/navigation-links/navigation-links.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { WishlistCounterComponent } from './header/wishlist-counter/wishlist-cou
     HeaderComponent,
     FooterComponent,
     CartCounterComponent,
-    WishlistCounterComponent
+    WishlistCounterComponent,
+    NavigationLinksComponent
   ],
   imports: [
     BrowserModule,
