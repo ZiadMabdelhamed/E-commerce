@@ -12,6 +12,7 @@ import { CartCounterComponent } from './header/cart-counter/cart-counter.compone
 import { WishlistCounterComponent } from './header/wishlist-counter/wishlist-counter.component';
 import { NavigationLinksComponent } from './header/navigation-links/navigation-links.component';
 import { UsernameComponent } from './header/username/username.component';
+import { LogoutComponent } from './header/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { UsernameComponent } from './header/username/username.component';
     CartCounterComponent,
     WishlistCounterComponent,
     NavigationLinksComponent,
-    UsernameComponent
+    UsernameComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
