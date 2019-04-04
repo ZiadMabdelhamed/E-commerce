@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CartCounterComponent } from './header/cart-counter/cart-counter.component';
 import { WishlistCounterComponent } from './header/wishlist-counter/wishlist-counter.component';
 import { NavigationLinksComponent } from './header/navigation-links/navigation-links.component';
+import { UsernameComponent } from './header/username/username.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NavigationLinksComponent } from './header/navigation-links/navigation-l
     FooterComponent,
     CartCounterComponent,
     WishlistCounterComponent,
-    NavigationLinksComponent
+    NavigationLinksComponent,
+    UsernameComponent
   ],
   imports: [
     BrowserModule,
