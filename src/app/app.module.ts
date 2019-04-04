@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CartCounterComponent } from './header/cart-counter/cart-counter.component';
+import { WishlistCounterComponent } from './header/wishlist-counter/wishlist-counter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    CartCounterComponent
+    CartCounterComponent,
+    WishlistCounterComponent
   ],
   imports: [
     BrowserModule,
