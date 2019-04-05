@@ -16,6 +16,7 @@ import { LogoutComponent } from './header/logout/logout.component';
 import { LoginComponent } from './header/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
+import { SingleProductComponent } from './products/single-product/single-product.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ProductsComponent } from './products/products.component';
     LogoutComponent,
     LoginComponent,
     HomeComponent,
-    ProductsComponent
+    ProductsComponent,
+    SingleProductComponent
   ],
   imports: [
     BrowserModule,
