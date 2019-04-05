@@ -9,6 +9,10 @@ export class SingleProductComponent implements OnInit {
   @Input('image_url') image: string[];
   @Input('pro_name') name: string[];
 
+  single_alert()
+  {
+    alert(this.name);
+  }
   constructor() { }
 
   ngOnInit() {
