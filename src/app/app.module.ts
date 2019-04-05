@@ -13,6 +13,7 @@ import { WishlistCounterComponent } from './header/wishlist-counter/wishlist-cou
 import { NavigationLinksComponent } from './header/navigation-links/navigation-links.component';
 import { UsernameComponent } from './header/username/username.component';
 import { LogoutComponent } from './header/logout/logout.component';
+import { LoginComponent } from './header/login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LogoutComponent } from './header/logout/logout.component';
     WishlistCounterComponent,
     NavigationLinksComponent,
     UsernameComponent,
-    LogoutComponent
+    LogoutComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
