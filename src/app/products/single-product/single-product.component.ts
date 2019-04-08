@@ -1,4 +1,5 @@
 import { Component, OnInit ,Input } from '@angular/core';
+import {Router} from "@angular/router"
 
 @Component({
   selector: 'app-single-product',
@@ -8,12 +9,18 @@ import { Component, OnInit ,Input } from '@angular/core';
 export class SingleProductComponent implements OnInit {
   @Input('image_url') image: string[];
   @Input('pro_name') name: string[];
+  @Input('pro_id') id: string[];
+
+
+
+  constructor(private router: Router) { }
 
   single_alert()
   {
-    alert(this.name);
+    // alert(this.id);
+    this.router.navigate(['/product', this.id]);
+
   }
-  constructor() { }
 
   ngOnInit() {
   }
