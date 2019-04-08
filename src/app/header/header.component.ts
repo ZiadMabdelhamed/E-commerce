@@ -12,4 +12,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  cart_counter_header()
+  {
+    alert('cart counter header');
+  }
 }

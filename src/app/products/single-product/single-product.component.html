@@ -3,11 +3,11 @@
     <img src="{{image}}" alt="IMG-PRODUCT" style="height: 250px;">
     <div class="block2-overlay trans-0-4">
       <div class="block2-btn-addcart w-size1 trans-0-4">
-        <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 add_cart">Add to Cart</button>
+      <app-add-to-cart [product]="pro_obj"></app-add-to-cart>
       </div>
     </div>
   </div>
   <div class="block2-txt p-t-20">
-    <app-link [pro_name]=name  (singlepro)="single_alert()"></app-link>
+    <app-link [pro_name]=name  (singlepro)="single_product_page()"></app-link>
   </div>
 </div>

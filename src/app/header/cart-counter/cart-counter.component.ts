@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartCounterComponent implements OnInit {
 
-  constructor() { }
+  public cart_count:number;
+
+  constructor() { this.cart_count = 0; }
 
   ngOnInit() {
+
   }
 
+
+
+  public cart_counter(pro_obj)
+  {
+    alert('carr t counter '+pro_obj.id);
+    this.cart_count++;
+  }
 }
