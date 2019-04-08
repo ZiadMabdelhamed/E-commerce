@@ -1,13 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 
+export interface Product {
+  id: number;
+  Name: string;
+  Price:number;
+  ProductPicUrl:string;
+}
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
+
+
+
 export class ProductsComponent implements OnInit {
 
-  public json_products = [
+
+ public json_products:Product[] = [
     {
       "id":1,
       "Name": "Notebook Basic 15",

@@ -3,6 +3,10 @@
     <div class="wrap-slick3 flex-sb flex-w">
       <div class="wrap-slick3-dots">
         <ul class="slick3-dots" role="tablist" style="">
+          <div class="col-sm-12 col-md-6 col-lg-4 p-b-50  parent_node" >
+
+          </div>
+
         </ul>
       </div>
 
@@ -10,11 +14,12 @@
 
         <div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 4008px;"><div class="item-slick3 slick-slide slick-current slick-active" data-thumb="//cdn.shopify.com/s/files/1/2672/5778/products/item-04_bcfb0f5a-4eff-46f0-992d-b73eb1b4b88e_90x120.jpg?v=1515095994" data-slick-index="0" aria-hidden="false" tabindex="0" role="tabpanel" id="slick-slide10" aria-describedby="slick-slide-control10" style="width: 501px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;">
           <div class="wrap-pic-w">
-            <img src="//cdn.shopify.com/s/files/1/2672/5778/products/item-04_bcfb0f5a-4eff-46f0-992d-b73eb1b4b88e_700x933.jpg?v=1515095994" alt="Boxy5 T-Shirt with Roll Sleeve">
+            <img src="{{details[0].ProductPicUrl}}" alt="{{details[0].Name}}">
           </div>
         </div>
 
-        </div></div>
+        </div>
+    </div>
 
 
 
@@ -37,11 +42,11 @@
 
   <div class="w-size14 p-t-30 respon5">
     <h4 class="product-detail-name m-text16 p-b-13">
-      Boxy5 T-Shirt with Roll Sleeve
+      {{details[0].Name}}
     </h4>
 
 
-    <span id="productPrice" class="m-text17"> <span class="visually-hidden"><span class="money" data-currency-usd="$20.00" data-currency="USD">$20.00</span></span></span>
+    <span id="productPrice" class="m-text17"> <span class="visually-hidden"><span class="money" data-currency-usd="" data-currency="USD">${{details[0].Price}}</span></span></span>
 
 
 
