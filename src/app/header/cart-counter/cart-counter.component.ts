@@ -5,21 +5,48 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './cart-counter.component.html',
   styleUrls: ['./cart-counter.component.scss']
 })
+
 export class CartCounterComponent implements OnInit {
 
-  public cart_count:number;
 
-  constructor() { this.cart_count = 0; }
+
+  constructor()
+  {
+    var counter_init = localStorage.getItem('cart_counter');
+    var cart_arr = localStorage.getItem('cart_products');
+    if (!counter_init)
+    {
+      localStorage.setItem('cart_counter', '0');
+    }
+
+    if(!cart_arr)
+    {
+      var pro_empty = [];
+      localStorage.setItem('cart_products', JSON.stringify(pro_empty));
+    }
+  }
 
   ngOnInit() {
 
   }
 
+  public counter = parseInt(localStorage.getItem('cart_counter'));
 
 
-  public cart_counter(pro_obj)
+  cart_counter(pro_obj)
   {
-    alert('carr t counter '+pro_obj.id);
-    this.cart_count++;
+
+      var cart_array = [];
+      cart_array = JSON.parse(localStorage.getItem('cart_products'));
+
+      this.counter = this.counter + 1;
+      cart_array.push(pro_obj);
+
+      localStorage.setItem('cart_counter', this.counter.toString());
+      localStorage.setItem('cart_products', JSON.stringify(cart_array));
+
+
+
+
   }
 }
