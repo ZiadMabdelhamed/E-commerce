@@ -15,13 +15,6 @@
             <p><strong>I am a returning customer</strong></p>
             <form method="post" action="/account/login" id="customer_login" accept-charset="UTF-8"><input type="hidden" name="form_type" value="customer_login"><input type="hidden" name="utf8" value="✓">
 
-
-
-
-
-              <div class="note form-success" id="resetSuccess" style="display:none;">
-                We've sent you an email with a link to update your password.
-              </div>
               <div class="form-group">
                 <label class="control-label" for="customer_email">Email</label>
                 <input type="text" value="" name="customer[email]" id="customer_email" placeholder="Email" class="form-control" autocorrect="off" autocapitalize="off" autofocus="">
@@ -38,34 +31,7 @@
               </p>
             </form>
 
-            <div id="recover_password" style="display: none;">
-
-              <h3>Reset your password</h3>
-              <p>We will send you an email to reset your password.</p>
-
-              <form method="post" action="/account/recover" accept-charset="UTF-8"><input type="hidden" name="form_type" value="recover_customer_password"><input type="hidden" name="utf8" value="✓">
-
-
-
-
-
-
-                <div class="form-group">
-                  <label for="recover-email">Email</label>
-                  <input type="text" value="" name="email" class="form-control" id="recover-email" placeholder="Email" autocorrect="off" autocapitalize="off">
-
-                  <p class="submit lost-password form-group">
-                    <button class="btn btn-primary" name="SubmitLogin" id="button-account" type="submit">
-                      <span>Submit</span>
-                    </button>
-                    or <a class="btn-acct" href="#" onclick="hideRecoverPasswordForm();return false;">Cancel</a>
-                  </p>
-                </div>
-              </form>
-
-            </div>
-
-
+          <br>
           </div>
         </div>
       </div>
