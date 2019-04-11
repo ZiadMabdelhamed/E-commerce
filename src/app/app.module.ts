@@ -24,6 +24,11 @@ import {CounterServiceService} from "./header/counter-service.service";
 import { DropdownCartComponent } from './header/dropdown-cart/dropdown-cart.component';
 import {ShowHideCartService} from './header/dropdown-cart/show-hide/show-hide-cart.service';
 import { CartDetailsComponent } from './cart/cart-details/cart-details.component';
+import { InputComponent } from './forms/shared/input/input.component';
+import { SelectComponent } from './forms/shared/select/select.component';
+import { SubmitComponent } from './forms/shared/submit/submit.component';
+import { LoginFormComponent } from './forms/login-form/login-form.component';
+import { RegisterFormComponent } from './forms/register-form/register-form.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +48,12 @@ import { CartDetailsComponent } from './cart/cart-details/cart-details.component
     LinkComponent,
     AddToCartComponent,
     DropdownCartComponent,
-    CartDetailsComponent
+    CartDetailsComponent,
+    InputComponent,
+    SelectComponent,
+    SubmitComponent,
+    LoginFormComponent,
+    RegisterFormComponent
   ],
   imports: [
     BrowserModule,
