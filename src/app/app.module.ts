@@ -23,6 +23,7 @@ import { AddToCartComponent } from './products/single-product/add-to-cart/add-to
 import {CounterServiceService} from "./header/counter-service.service";
 import { DropdownCartComponent } from './header/dropdown-cart/dropdown-cart.component';
 import {ShowHideCartService} from './header/dropdown-cart/show-hide/show-hide-cart.service';
+import { CartDetailsComponent } from './cart/cart-details/cart-details.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import {ShowHideCartService} from './header/dropdown-cart/show-hide/show-hide-ca
     ShowSingleProductComponent,
     LinkComponent,
     AddToCartComponent,
-    DropdownCartComponent
+    DropdownCartComponent,
+    CartDetailsComponent
   ],
   imports: [
     BrowserModule,
