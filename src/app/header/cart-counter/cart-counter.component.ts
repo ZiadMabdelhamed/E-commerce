@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CounterServiceService} from "../counter-service.service";
 
 @Component({
   selector: 'app-cart-counter',
@@ -8,45 +9,17 @@ import { Component, OnInit } from '@angular/core';
 
 export class CartCounterComponent implements OnInit {
 
-
-
-  constructor()
+    counter:number;
+  constructor(private counter_service: CounterServiceService )
   {
-    var counter_init = localStorage.getItem('cart_counter');
-    var cart_arr = localStorage.getItem('cart_products');
-    if (!counter_init)
-    {
-      localStorage.setItem('cart_counter', '0');
-    }
-
-    if(!cart_arr)
-    {
-      var pro_empty = [];
-      localStorage.setItem('cart_products', JSON.stringify(pro_empty));
-    }
+      this.counter_service.counter_updated.subscribe(
+          (counter:number)=> this.counter = counter
+      );
   }
 
   ngOnInit() {
 
   }
 
-  public counter = parseInt(localStorage.getItem('cart_counter'));
 
-
-  cart_counter(pro_obj)
-  {
-
-      var cart_array = [];
-      cart_array = JSON.parse(localStorage.getItem('cart_products'));
-
-      this.counter = this.counter + 1;
-      cart_array.push(pro_obj);
-
-      localStorage.setItem('cart_counter', this.counter.toString());
-      localStorage.setItem('cart_products', JSON.stringify(cart_array));
-
-
-
-
-  }
 }

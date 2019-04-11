@@ -20,6 +20,7 @@ import { SingleProductComponent } from './products/single-product/single-product
 import { ShowSingleProductComponent } from './products/show-single-product/show-single-product.component';
 import { LinkComponent } from './products/single-product/link/link.component';
 import { AddToCartComponent } from './products/single-product/add-to-cart/add-to-cart.component';
+import {CounterServiceService} from "./header/counter-service.service";
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { AddToCartComponent } from './products/single-product/add-to-cart/add-to
     AppRoutingModule,
     NgbModule
   ],
-  providers: [],
+  providers: [CounterServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
