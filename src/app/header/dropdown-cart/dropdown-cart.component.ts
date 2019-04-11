@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DropdownCartComponent implements OnInit {
 
-  constructor() { }
+  all_cart = JSON.parse(localStorage.getItem('cart_products'));
+
+  constructor() {
+    console.log(this.all_cart);
+  }
 
   ngOnInit() {
   }

@@ -22,6 +22,7 @@ import { LinkComponent } from './products/single-product/link/link.component';
 import { AddToCartComponent } from './products/single-product/add-to-cart/add-to-cart.component';
 import {CounterServiceService} from "./header/counter-service.service";
 import { DropdownCartComponent } from './header/dropdown-cart/dropdown-cart.component';
+import {ShowHideCartService} from './header/dropdown-cart/show-hide/show-hide-cart.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import { DropdownCartComponent } from './header/dropdown-cart/dropdown-cart.comp
     AppRoutingModule,
     NgbModule
   ],
-  providers: [CounterServiceService],
+  providers: [CounterServiceService,ShowHideCartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

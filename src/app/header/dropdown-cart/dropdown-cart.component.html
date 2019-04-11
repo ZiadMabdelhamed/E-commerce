@@ -3,24 +3,25 @@
 
     <ul class="header-cart-wrapitem">
 
-      <li class="header-cart-item">
+      <li class="header-cart-item" *ngFor="let product of all_cart">
         <div class="header-cart-item-img">
           <a href="/products/boxy5-t-shirt-with-roll-sleeve?variant=8772428103722">
-            <img class="" src="//cdn.shopify.com/s/files/1/2672/5778/products/item-04_bcfb0f5a-4eff-46f0-992d-b73eb1b4b88e_80x80.jpg?v=1515095994" alt="Boxy5 T-Shirt with Roll Sleeve - S / Gray" title="Boxy5 T-Shirt with Roll Sleeve - S / Gray">
+            <img class="" src="{{product.ProductPicUrl}}" alt="{{product.ProductPicUrl}}" title="{{product.ProductPicUrl}}">
           </a>
         </div>
         <div class="header-cart-item-txt">
           <a href="/products/boxy5-t-shirt-with-roll-sleeve?variant=8772428103722" class="header-cart-item-name">
-            Boxy5 T-Shirt with Roll Sleeve
+            {{product.Name}}
           </a>
           <span class="header-cart-item-info">
-            1 × <span class="money" data-currency-usd="$20.00" data-currency="USD">$20.00</span>
+            {{product.Quantity}} × <span class="money" data-currency-usd="$20.00" data-currency="USD">${{product.Price}}</span>
           </span>
           <button type="button" onclick="cart.remove('8772428103722');" title="Remove" class="btn btn-xs">
             x
           </button>
         </div>
       </li>
+
 
     </ul>
     <div class="header-cart-total">
@@ -31,12 +32,6 @@
         <!-- Button -->
         <a href="/cart" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
           View Cart
-        </a>
-      </div>
-      <div class="header-cart-wrapbtn">
-        <!-- Button -->
-        <a href="/checkout" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-          Checkout
         </a>
       </div>
     </div>

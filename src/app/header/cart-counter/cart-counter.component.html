@@ -3,9 +3,11 @@
   <span class="linedivide1"></span>
 
   <div class="header-wrapicon2 ">
-    <img src="assets/images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown cart_details" alt="ICON">
+    <img src="assets/images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown cart_details" alt="ICON" (click)="toggle()">
     <span class="header-icons-noti" >{{ counter }} </span>
-
+    <div *ngIf="show_cart == true">
+      <app-dropdown-cart></app-dropdown-cart>
+    </div>
   </div>
 
 </div>
