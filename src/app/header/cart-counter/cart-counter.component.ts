@@ -15,6 +15,7 @@ export class CartCounterComponent implements OnInit {
       this.counter_service.counter_updated.subscribe(
           (counter:number)=> this.counter = counter
       );
+      this.counter_service.set__init();
   }
 
   ngOnInit() {

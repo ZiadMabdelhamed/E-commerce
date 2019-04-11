@@ -21,6 +21,7 @@ import { ShowSingleProductComponent } from './products/show-single-product/show-
 import { LinkComponent } from './products/single-product/link/link.component';
 import { AddToCartComponent } from './products/single-product/add-to-cart/add-to-cart.component';
 import {CounterServiceService} from "./header/counter-service.service";
+import { DropdownCartComponent } from './header/dropdown-cart/dropdown-cart.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {CounterServiceService} from "./header/counter-service.service";
     SingleProductComponent,
     ShowSingleProductComponent,
     LinkComponent,
-    AddToCartComponent
+    AddToCartComponent,
+    DropdownCartComponent
   ],
   imports: [
     BrowserModule,
