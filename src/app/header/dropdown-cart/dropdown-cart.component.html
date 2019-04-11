@@ -15,8 +15,8 @@
           </a>
           <span class="header-cart-item-info">
             {{product.Quantity}} × <span class="money" data-currency-usd="$20.00" data-currency="USD">${{product.Price}}</span>
-          </span>
-          <button type="button" onclick="cart.remove('8772428103722');" title="Remove" class="btn btn-xs">
+          </span>emit_change
+          <button type="button" onclick="cart.remove('8772428103722');" title="Remove" class="btn btn-xs" (click)="remove_from_cart(product.id)">
             x
           </button>
         </div>
@@ -24,9 +24,6 @@
 
 
     </ul>
-    <div class="header-cart-total">
-      Subtotal : <span class="money" data-currency-usd="$20.00" data-currency="USD">$20.00</span>
-    </div>
     <div class="header-cart-buttons">
       <div class="header-cart-wrapbtn">
         <!-- Button -->

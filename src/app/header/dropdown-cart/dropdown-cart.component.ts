@@ -16,4 +16,11 @@ export class DropdownCartComponent implements OnInit {
   ngOnInit() {
   }
 
+  remove_from_cart(id)
+  {
+    const index = this.all_cart.findIndex(order => order.id === id);
+    this.all_cart.splice(index, 1);
+    localStorage.setItem('cart_products', JSON.stringify(this.all_cart));
+  }
+
 }
