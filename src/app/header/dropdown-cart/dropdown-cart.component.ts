@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CounterServiceService} from "../counter-service.service";
 
 @Component({
   selector: 'app-dropdown-cart',
@@ -8,8 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class DropdownCartComponent implements OnInit {
 
   all_cart = JSON.parse(localStorage.getItem('cart_products'));
+  counter:number = parseInt(localStorage.getItem('cart_counter'));
 
-  constructor() {
+  constructor(private counter_service: CounterServiceService) {
     console.log(this.all_cart);
   }
 
@@ -18,9 +20,7 @@ export class DropdownCartComponent implements OnInit {
 
   remove_from_cart(id)
   {
-    const index = this.all_cart.findIndex(order => order.id === id);
-    this.all_cart.splice(index, 1);
-    localStorage.setItem('cart_products', JSON.stringify(this.all_cart));
+    this.counter_service.remove_from_cart(id);
   }
 
 }

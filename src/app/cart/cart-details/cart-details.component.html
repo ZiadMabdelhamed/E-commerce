@@ -1,3 +1,52 @@
-<p>
-  cart-details works!
-</p>
+<section class="cart bgwhite p-t-70 p-b-100">
+  <div class="container" *ngIf="all_cart?.length; else notfound">
+
+    <form action="/checkout" method="post" id="cart_form">
+      <!-- Cart item -->
+      <div class="container-table-cart pos-relative">
+        <div class="wrap-table-shopping-cart bgwhite">
+          <table class="table-shopping-cart">
+            <tbody><tr class="table-head">
+              <th class="column-1"></th>
+              <th class="column-2">Product Name</th>
+              <th class="column-3">Unit Price</th>
+              <th class="column-4 p-l-70">Quantity</th>
+              <th class="column-5">Total</th>
+            </tr>
+
+            <tr class="table-row" data-line="1"   *ngFor="let product of all_cart">
+              <td class="column-1">
+                <div class="cart-img-product b-rad-4 o-f-hidden">
+                  <a href="/product/{{product.id}}">
+                    <img src="{{product.ProductPicUrl}}" alt="{{product.ProductPicUrl}}" title="{{product.ProductPicUrl}}" class="">
+                  </a>
+                </div>
+              </td>
+              <td class="column-2">
+                <a href="/product/{{product.id}}">{{product.Name}}</a>
+              </td>
+              <td class="column-3"><span class="money" data-currency-usd="$20.00">${{product.Price}}</span></td>
+              <td class="column-3">
+                  <span class="money" data-currency-usd="$20.00">{{product.Quantity}}</span>
+              </td>
+              <td class="column-5"><span class="money" data-currency-usd="$20.00">${{product.Quantity * product.Price}}</span></td>
+            </tr>
+
+            </tbody></table>
+        </div>
+      </div>
+
+      <!-- Total -->
+    </form>
+  </div>
+
+  <ng-template #notfound>
+  <div class="container" >
+
+    <h1 class="page-heading">Your cart is currently empty.</h1>
+    <p>Continue browsing <a href="/">here</a>.</p>
+
+  </div>
+  </ng-template>
+
+</section>

@@ -52,6 +52,22 @@ export class CounterServiceService {
     localStorage.setItem('cart_products', JSON.stringify(cart_array));
     this.counter_updated.emit(this.counter);
   }
+
+  remove_from_cart(id)
+  {
+    var cart_array =[];
+    cart_array = JSON.parse(localStorage.getItem('cart_products'));
+    const index = cart_array.findIndex(order => order.id === id);
+
+    this.counter -= cart_array[index].Quantity;
+    cart_array.splice(index, 1);
+
+    localStorage.setItem('cart_products', JSON.stringify(cart_array));
+    localStorage.setItem('cart_counter', this.counter.toString());
+    this.counter_updated.emit(this.counter);
+  }
+
+
   set__init()
   {
     this.counter_updated.emit(this.counter);

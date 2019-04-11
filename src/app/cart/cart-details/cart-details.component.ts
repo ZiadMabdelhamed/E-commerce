@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartDetailsComponent implements OnInit {
 
+  all_cart = JSON.parse(localStorage.getItem('cart_products'));
   constructor() { }
 
   ngOnInit() {
