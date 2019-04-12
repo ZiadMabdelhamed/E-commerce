@@ -66,6 +66,14 @@ export class RegisterFormComponent implements OnInit {
       this.errors_array = [];
       reg_array.push(this.regesterform.value);
       localStorage.setItem('registers', JSON.stringify(reg_array));
+
+      var login = [];
+      var user = {
+        "email": this.regesterform.value.email,
+        "password": this.regesterform.value.password
+      };
+      login.push(user);
+      localStorage.setItem('login', JSON.stringify(login));
       this.router.navigate(['/']);
     }
 

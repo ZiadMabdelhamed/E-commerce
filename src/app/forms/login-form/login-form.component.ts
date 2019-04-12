@@ -69,7 +69,7 @@ export class LoginFormComponent implements OnInit {
       this.errors_array.push(error);
     }
 
-    console.log(JSON.stringify(this.loginform.value));
+    // console.log(JSON.stringify(this.loginform.value));
   }
 
 
