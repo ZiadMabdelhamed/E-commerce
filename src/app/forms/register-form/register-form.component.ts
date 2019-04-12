@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register-form',
@@ -15,6 +16,8 @@ export class RegisterFormComponent implements OnInit {
   public form_name: string = "!regesterform.valid";
   public email: string = "Email";
   public password: string = "Password";
+
+  public errors_array = [];
 
   regesterform = new FormGroup({
     email: new FormControl('', [
@@ -35,7 +38,7 @@ export class RegisterFormComponent implements OnInit {
   });
 
 
-  constructor() {
+  constructor(private router: Router) {
 
     var register_arr = localStorage.getItem('registers');
 
@@ -44,6 +47,7 @@ export class RegisterFormComponent implements OnInit {
       var reg_empty = [];
       localStorage.setItem('registers', JSON.stringify(reg_empty));
     }
+
   }
 
   ngOnInit() {
@@ -55,13 +59,23 @@ export class RegisterFormComponent implements OnInit {
     reg_array = JSON.parse(localStorage.getItem('registers'));
 
     const found = reg_array.some(el => el.email === this.regesterform.value.email);
-    console.log(JSON.stringify(this.regesterform.value.email));
+
+
     if(!found)
     {
+      this.errors_array = [];
       reg_array.push(this.regesterform.value);
+      localStorage.setItem('registers', JSON.stringify(reg_array));
+      this.router.navigate(['/']);
     }
 
-    localStorage.setItem('registers', JSON.stringify(reg_array));
-    console.log(reg_array);
+    else
+    {
+      var error = {
+        "error" : "email already exist",
+      }
+      this.errors_array.push(error);
+    }
+
   }
 }
