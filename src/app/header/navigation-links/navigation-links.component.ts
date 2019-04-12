@@ -22,6 +22,13 @@ export class NavigationLinksComponent implements OnInit {
     if (this.router.url.includes('/')) {
       this.login_user = JSON.parse(localStorage.getItem('login'));
     }
+    if (this.router.url.includes('/register') && this.login_user != "" ) {
+      this.router.navigate(['/']);
+    }
+    if (this.router.url.includes('/login') && this.login_user != "" ) {
+      this.router.navigate(['/']);
+    }
+
   }
 
 
