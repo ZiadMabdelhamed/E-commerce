@@ -5,6 +5,7 @@ import {ShowSingleProductComponent} from './products/show-single-product/show-si
 import {CartDetailsComponent} from "./cart/cart-details/cart-details.component";
 import {LoginFormComponent} from "./forms/login-form/login-form.component";
 import {RegisterFormComponent} from "./forms/register-form/register-form.component";
+import {NotfoundComponent} from "./notfound/notfound.component";
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterFormComponent
+  },
+  {
+    path: '**',
+    component: NotfoundComponent
   },
 
 ];

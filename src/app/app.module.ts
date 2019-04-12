@@ -30,6 +30,7 @@ import { SubmitComponent } from './forms/shared/submit/submit.component';
 import { LoginFormComponent } from './forms/login-form/login-form.component';
 import { RegisterFormComponent } from './forms/register-form/register-form.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { NotfoundComponent } from './notfound/notfound.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +54,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     SelectComponent,
     SubmitComponent,
     LoginFormComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,

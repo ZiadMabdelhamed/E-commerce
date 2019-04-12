@@ -19,7 +19,7 @@
               </div>
 
               <p class="submit">
-                <input type="submit" value="Sign In" class="btn btn-primary">
+                <app-submit (action)="login()" [form]="form_name" ></app-submit>
                 or <a class="btn-acct" href="/">Return to Store</a>
               </p>
             </form>

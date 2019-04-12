@@ -11,24 +11,36 @@ export class LoginFormComponent implements OnInit {
   public type_pass: string = "password";
   public type_text: string = "text";
   public type_email: string = "email";
-  public email: string = "email";
-  public password: string = "password";
+  public email: string = "Email";
+  public password: string = "Password";
+  public form_name: string = "!loginform.valid";
+
+  loginform:FormGroup;
 
 
-  loginform = new FormGroup({
-    email: new FormControl('', [
-      Validators.required,
-    ]),
-    password: new FormControl('',[
-      Validators.required,
-      Validators.minLength(6),
-    ]),
-  });
+
+  constructor() {
+    this.loginform = new FormGroup({
+      Email: new FormControl('', [
+        Validators.required,
+      ]),
+      Password: new FormControl('',[
+        Validators.required,
+        Validators.minLength(6),
+      ]),
+    });
 
 
-  constructor() { }
+  }
 
   ngOnInit() {
   }
+
+
+  login()
+  {
+    alert(this.loginform.value);
+  }
+
 
 }
