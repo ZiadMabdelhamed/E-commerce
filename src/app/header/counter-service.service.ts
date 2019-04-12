@@ -6,12 +6,15 @@ import {EventEmitter, Injectable} from '@angular/core';
 export class CounterServiceService {
 
   counter:number;
+  wish_counter:number;
   counter_updated = new EventEmitter<number>();
+  wishlist_counter = new EventEmitter<number>();
 
   constructor()
   {
     var counter_init = localStorage.getItem('cart_counter');
     var cart_arr = localStorage.getItem('cart_products');
+    var wish_array = localStorage.getItem('wishlist');
 
     if (!counter_init)
     {
@@ -20,11 +23,17 @@ export class CounterServiceService {
 
     if(!cart_arr)
     {
-      var pro_empty = [];
-      localStorage.setItem('cart_products', JSON.stringify(pro_empty));
+
+      localStorage.setItem('cart_products', JSON.stringify([]));
+    }
+    if(!wish_array)
+    {
+
+      localStorage.setItem('wishlist','0');
     }
 
     this.counter= parseInt(localStorage.getItem('cart_counter'));
+    this.wish_counter= parseInt(localStorage.getItem('wishlist'));
   }
 
 
@@ -67,10 +76,24 @@ export class CounterServiceService {
     this.counter_updated.emit(this.counter);
   }
 
+  wishlist()
+  {
+    this.wish_counter = parseInt(localStorage.getItem('wishlist'));
+    this.wish_counter += 1;
+
+    this.wishlist_counter.emit(this.wish_counter);
+    localStorage.setItem('wishlist', this.wish_counter.toString());
+
+  }
 
   set__init()
   {
     this.counter_updated.emit(this.counter);
+  }
+
+  set_init_wish()
+  {
+    this.wishlist_counter.emit(this.wish_counter);
   }
 
   refresh_cart()

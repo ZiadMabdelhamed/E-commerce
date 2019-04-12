@@ -32,6 +32,7 @@ import { RegisterFormComponent } from './forms/register-form/register-form.compo
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { RegisterComponent } from './header/register/register.component';
+import { WishCounterComponent } from './products/single-product/wish-counter/wish-counter.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +58,8 @@ import { RegisterComponent } from './header/register/register.component';
     LoginFormComponent,
     RegisterFormComponent,
     NotfoundComponent,
-    RegisterComponent
+    RegisterComponent,
+    WishCounterComponent
   ],
   imports: [
     BrowserModule,
