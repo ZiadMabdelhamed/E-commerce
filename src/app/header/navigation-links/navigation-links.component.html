@@ -8,13 +8,16 @@
   <nav class="menu">
     <ul class="main_menu">
 
-      <app-login></app-login>
 
-      <app-register></app-register>
-
-      <app-logout></app-logout>
-
+      <div  *ngIf="login_user?.length; else notfound" ><app-username [user]="login_user[0].email"></app-username></div>
+      <ng-template #notfound>
+        <app-login></app-login>
+        <app-register></app-register>
+      </ng-template>
       <app-wishlist-counter></app-wishlist-counter>
+
+
+      <div *ngIf="login_user?.length; else notfound"><app-logout></app-logout></div>
 
 
     </ul>
