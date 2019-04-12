@@ -12,4 +12,10 @@ export class LogoutComponent implements OnInit {
   ngOnInit() {
   }
 
+  logout()
+  {
+
+    localStorage.setItem('login', JSON.stringify([]));
+  }
+
 }

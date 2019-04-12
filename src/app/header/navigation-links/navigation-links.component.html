@@ -14,10 +14,10 @@
         <app-login></app-login>
         <app-register></app-register>
       </ng-template>
+
       <app-wishlist-counter></app-wishlist-counter>
 
-
-      <div *ngIf="login_user?.length; else notfound"><app-logout></app-logout></div>
+      <div *ngIf="login_user?.length;"><app-logout></app-logout></div>
 
 
     </ul>
