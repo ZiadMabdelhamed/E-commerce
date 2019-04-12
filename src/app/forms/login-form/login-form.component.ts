@@ -49,7 +49,16 @@ export class LoginFormComponent implements OnInit {
 
     var reg_array = JSON.parse(localStorage.getItem('registers'));
 
-    const found = reg_array.some(el => el.email === this.loginform.value.email &&  el.password === this.loginform.value.password);
+    var found;
+    if(reg_array)
+    {
+      found = reg_array.some(el => el.email === this.loginform.value.email &&  el.password === this.loginform.value.password);
+    }
+    else
+      {
+        found = false;
+      }
+
 
 
 
