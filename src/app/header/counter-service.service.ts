@@ -7,6 +7,7 @@ export class CounterServiceService {
 
   counter:number;
   counter_updated = new EventEmitter<number>();
+  cart_updated = new EventEmitter<string>();
 
   constructor()
   {
@@ -73,4 +74,10 @@ export class CounterServiceService {
     this.counter_updated.emit(this.counter);
   }
 
+  refresh_cart()
+  {
+    var all_cart = JSON.parse(localStorage.getItem('cart_products'));
+    return all_cart;
+    // this.cart_updated.emit(all_cart);
+  }
 }

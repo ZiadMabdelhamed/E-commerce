@@ -12,6 +12,7 @@
               <th class="column-3">Unit Price</th>
               <th class="column-4 p-l-70">Quantity</th>
               <th class="column-5">Total</th>
+              <th class="column-5">Action</th>
             </tr>
 
             <tr class="table-row" data-line="1"   *ngFor="let product of all_cart">
@@ -30,6 +31,7 @@
                   <span class="money" data-currency-usd="$20.00">{{product.Quantity}}</span>
               </td>
               <td class="column-5"><span class="money" data-currency-usd="$20.00">${{product.Quantity * product.Price}}</span></td>
+              <td class="column-5"><button (click)="remove_from_cart(product.id)">X</button></td>
             </tr>
 
             </tbody></table>
