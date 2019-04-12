@@ -6,7 +6,7 @@ import {FormGroup,FormControl,Validators} from '@angular/forms';
   styleUrls: ['./submit.component.scss']
 })
 export class SubmitComponent implements OnInit {
-  @Input('form') form: string;
+  @Input('form_name') form_name: any;
   @Output() action: EventEmitter<any> = new EventEmitter();
   constructor() { }
 

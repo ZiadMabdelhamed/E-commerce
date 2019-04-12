@@ -9,7 +9,7 @@ import {FormGroup,FormControl,Validators} from '@angular/forms';
 export class InputComponent implements OnInit {
   @Input('name') data: string[];
   @Input('type') type: string[];
-  @Input('formControlN') formControlN: string;
+  @Input('formControlN') formControlN: any;
 
   constructor() { }
 

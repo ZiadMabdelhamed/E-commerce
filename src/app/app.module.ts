@@ -31,6 +31,7 @@ import { LoginFormComponent } from './forms/login-form/login-form.component';
 import { RegisterFormComponent } from './forms/register-form/register-form.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { RegisterComponent } from './header/register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +56,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
     SubmitComponent,
     LoginFormComponent,
     RegisterFormComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

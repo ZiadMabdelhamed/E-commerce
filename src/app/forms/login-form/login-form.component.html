@@ -1,3 +1,4 @@
+<section class="bgwhite p-t-55 p-b-65">
 <div class="container">
   <div class="row">
     <div id="content" class="col-sm-12">
@@ -10,16 +11,16 @@
 
               <div class="form-group">
                 <label class="control-label" >Email</label>
-                <app-input [name]="name" [type]="type_email" [formControlN]="email"></app-input>
+                <app-input [name]="name" [type]="type_email" [formControlN]="loginform.controls.email"></app-input>
               </div>
 
               <div class="form-group">
                 <label class="control-label">Password</label>
-                <app-input [name]="name" [type]="type_pass" [formControlN]="password"></app-input>
+                <app-input [name]="name" [type]="type_pass" [formControlN]="loginform.controls.password"></app-input>
               </div>
 
               <p class="submit">
-                <app-submit (action)="login()" [form]="form_name" ></app-submit>
+                <app-submit (action)="login()" [form_name]="loginform.valid" ></app-submit>
                 or <a class="btn-acct" href="/">Return to Store</a>
               </p>
             </form>
@@ -31,5 +32,4 @@
     </div>
   </div>
 </div>
-
-
+</section>

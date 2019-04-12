@@ -7,7 +7,6 @@ export class CounterServiceService {
 
   counter:number;
   counter_updated = new EventEmitter<number>();
-  cart_updated = new EventEmitter<string>();
 
   constructor()
   {

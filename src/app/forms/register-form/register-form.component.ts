@@ -13,12 +13,22 @@ export class RegisterFormComponent implements OnInit {
   public type_text: string = "text";
   public type_email: string = "email";
   public form_name: string = "!regesterform.valid";
+  public email: string = "Email";
+  public password: string = "Password";
 
   regesterform = new FormGroup({
-    Email: new FormControl('', [
+    email: new FormControl('', [
       Validators.required,
     ]),
-    Password: new FormControl('',[
+    password: new FormControl('',[
+      Validators.required,
+      Validators.minLength(6),
+    ]),
+    fname: new FormControl('',[
+      Validators.required,
+      Validators.minLength(6),
+    ]),
+    lname: new FormControl('',[
       Validators.required,
       Validators.minLength(6),
     ]),
@@ -31,6 +41,6 @@ export class RegisterFormComponent implements OnInit {
   }
   regester()
   {
-
+    console.log(JSON.stringify(this.regesterform.value));
   }
 }

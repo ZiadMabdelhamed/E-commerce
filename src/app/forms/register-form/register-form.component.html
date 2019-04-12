@@ -9,30 +9,30 @@
             <div class="form-group required">
               <label class="col-sm-2 control-label" >First Name</label>
               <div class="col-sm-10">
-                <app-input [name]="name" [type]="type_text" ></app-input>
+                <app-input [name]="name" [type]="type_text" [formControlN]="regesterform.controls.fname"></app-input>
               </div>
             </div>
             <div class="form-group required">
               <label class="col-sm-2 control-label" >Last Name</label>
               <div class="col-sm-10">
-                <app-input [name]="name" [type]="type_text" ></app-input>
+                <app-input [name]="name" [type]="type_text" [formControlN]="regesterform.controls.lname"></app-input>
               </div>
             </div>
             <div class="form-group required">
-              <label class="col-sm-2 control-label" for="email">Email</label>
+              <label class="col-sm-2 control-label">Email</label>
               <div class="col-sm-10">
-                <input type="text" value="" name="customer[email]" id="email" placeholder="Email" class="form-control" autocorrect="off" autocapitalize="off">
+                <app-input [name]="name" [type]="type_email" [formControlN]="regesterform.controls.email"></app-input>
               </div>
             </div>
             <div class="form-group required">
               <label class="col-sm-2 control-label" >Password</label>
               <div class="col-sm-10">
-                <app-input [name]="name" [type]="type_pass" ></app-input>
+                <app-input [name]="name" [type]="type_pass" [formControlN]="regesterform.controls.password"></app-input>
               </div>
             </div>
           </fieldset>
           <div class="submit">
-            <app-submit (action)="regester()" [form]="form_name" ></app-submit>
+            <app-submit (action)="regester()" [form_name]="form_name" ></app-submit>
             <span>
               <i class="fa fa-user left"></i>
               Create
