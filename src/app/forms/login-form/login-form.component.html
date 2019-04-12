@@ -2,27 +2,20 @@
   <div class="row">
     <div id="content" class="col-sm-12">
       <div class="row">
-
-        <div class="alert alert-danger" style="display:none;">
-          <i class="fa fa-exclamation-circle"></i>
-          Warning: No match for E-Mail Address and/or Password.
-        </div>
-      </div>
-      <div class="row">
         <div class="col-sm-6">
           <div class="well">
             <h2>Returning Customer</h2>
             <p><strong>I am a returning customer</strong></p>
-            <form method="post" action="/account/login" id="customer_login" accept-charset="UTF-8"><input type="hidden" name="form_type" value="customer_login"><input type="hidden" name="utf8" value="✓">
+            <form [formGroup]="loginform" >
 
               <div class="form-group">
-                <label class="control-label" for="customer_email">Email</label>
-                <input type="text" value="" name="customer[email]" id="customer_email" placeholder="Email" class="form-control" autocorrect="off" autocapitalize="off" autofocus="">
+                <label class="control-label" >Email</label>
+                <app-input [name]="name" [type]="type_email" [formControlN]="email"></app-input>
               </div>
 
               <div class="form-group">
-                <label class="control-label" for="customer_password">Password</label>
-                <input class="form-control" type="password" value="" name="customer[password]" id="customer_password" placeholder="Password">
+                <label class="control-label">Password</label>
+                <app-input [name]="name" [type]="type_pass" [formControlN]="password"></app-input>
               </div>
 
               <p class="submit">
@@ -38,3 +31,5 @@
     </div>
   </div>
 </div>
+
+

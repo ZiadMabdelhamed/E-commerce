@@ -29,7 +29,7 @@ import { SelectComponent } from './forms/shared/select/select.component';
 import { SubmitComponent } from './forms/shared/submit/submit.component';
 import { LoginFormComponent } from './forms/login-form/login-form.component';
 import { RegisterFormComponent } from './forms/register-form/register-form.component';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +58,9 @@ import { RegisterFormComponent } from './forms/register-form/register-form.compo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [CounterServiceService,ShowHideCartService],
   bootstrap: [AppComponent]
