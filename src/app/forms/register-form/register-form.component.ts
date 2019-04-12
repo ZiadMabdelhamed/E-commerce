@@ -35,12 +35,33 @@ export class RegisterFormComponent implements OnInit {
   });
 
 
-  constructor() { }
+  constructor() {
+
+    var register_arr = localStorage.getItem('registers');
+
+    if(!register_arr)
+    {
+      var reg_empty = [];
+      localStorage.setItem('registers', JSON.stringify(reg_empty));
+    }
+  }
 
   ngOnInit() {
   }
+
   regester()
   {
-    console.log(JSON.stringify(this.regesterform.value));
+    var reg_array = [];
+    reg_array = JSON.parse(localStorage.getItem('registers'));
+
+    const found = reg_array.some(el => el.email === this.regesterform.value.email);
+    console.log(JSON.stringify(this.regesterform.value.email));
+    if(!found)
+    {
+      reg_array.push(this.regesterform.value);
+    }
+
+    localStorage.setItem('registers', JSON.stringify(reg_array));
+    console.log(reg_array);
   }
 }

@@ -32,7 +32,7 @@
             </div>
           </fieldset>
           <div class="submit">
-            <app-submit (action)="regester()" [form_name]="form_name" ></app-submit>
+            <app-submit (action)="regester()" [form_name]="regesterform.valid" ></app-submit>
             <span>
               <i class="fa fa-user left"></i>
               Create
