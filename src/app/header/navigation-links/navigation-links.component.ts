@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router,NavigationEnd} from '@angular/router';
 
 @Component({
   selector: 'app-navigation-links',
@@ -8,11 +9,20 @@ import { Component, OnInit } from '@angular/core';
 export class NavigationLinksComponent implements OnInit {
 
   public login_user;
-  constructor() {
+  constructor(private router:Router) {
+    router.events.subscribe( (event) => ( event instanceof NavigationEnd ) && this.handleRouteChange() );
+
     this.login_user = JSON.parse(localStorage.getItem('login'));
   }
 
   ngOnInit() {
   }
+
+  handleRouteChange = () => {
+    if (this.router.url.includes('/')) {
+      this.login_user = JSON.parse(localStorage.getItem('login'));
+    }
+  }
+
 
 }
