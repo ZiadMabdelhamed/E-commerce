@@ -29,7 +29,7 @@ export class CounterServiceService {
     if(!wish_array)
     {
 
-      localStorage.setItem('wishlist','0');
+      localStorage.setItem('wishlist',JSON.stringify([]));
     }
 
     this.counter= parseInt(localStorage.getItem('cart_counter'));
@@ -76,13 +76,22 @@ export class CounterServiceService {
     this.counter_updated.emit(this.counter);
   }
 
-  wishlist()
+  wishlist(pro_obj)
   {
-    this.wish_counter = parseInt(localStorage.getItem('wishlist'));
-    this.wish_counter += 1;
+    var wish_array = JSON.parse(localStorage.getItem('wishlist'));
+    const found = wish_array.some(el => el.id === pro_obj.id);
+
+    if(!found)
+    {
+      wish_array.push(pro_obj);
+      localStorage.setItem('wishlist', JSON.stringify(wish_array));
+      this.wish_counter = wish_array.length;
+      this.wish_counter += 1;
+
+    }
 
     this.wishlist_counter.emit(this.wish_counter);
-    localStorage.setItem('wishlist', this.wish_counter.toString());
+
 
   }
 
@@ -93,6 +102,8 @@ export class CounterServiceService {
 
   set_init_wish()
   {
+    var wish_array = JSON.parse(localStorage.getItem('wishlist'));
+    this.wish_counter = wish_array.length;
     this.wishlist_counter.emit(this.wish_counter);
   }
 

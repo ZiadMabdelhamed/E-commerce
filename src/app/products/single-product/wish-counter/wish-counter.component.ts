@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {CounterServiceService} from "../../../header/counter-service.service";
 
 @Component({
@@ -8,12 +8,14 @@ import {CounterServiceService} from "../../../header/counter-service.service";
 })
 export class WishCounterComponent implements OnInit {
 
+  @Input('product') pro_obj;
+
   constructor(private cart: CounterServiceService) { }
 
   ngOnInit() {
   }
   add_to_wishlist()
   {
-    this.cart.wishlist();
+    this.cart.wishlist(this.pro_obj);
   }
 }
